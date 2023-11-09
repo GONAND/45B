@@ -77,6 +77,7 @@ function pelisEstrenos(listaDePeliculas) {
 
 // esto es una prueba para ver si el repositorio si se actualiza
 // sin tener que hacer el git add. ni tampoco git push
+// quiero ver si se realiza el cambio
 
 
 
