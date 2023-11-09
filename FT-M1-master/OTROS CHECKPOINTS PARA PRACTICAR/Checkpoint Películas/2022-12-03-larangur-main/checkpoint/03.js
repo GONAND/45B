@@ -69,11 +69,14 @@ function pelisEstrenos(listaDePeliculas) {
     for (let i = 0; i < listaDePeliculas.length; i++) {
       for (let j = 0; j < peliculas.length; j++) {
         if(listaDePeliculas[i])
-        
+        return peliculas
       } 
     }
   }
 }
+
+// esto es una prueba para ver si el repositorio si se actualiza
+// sin tener que hacer el git add. ni tampoco git push
 
 
 
