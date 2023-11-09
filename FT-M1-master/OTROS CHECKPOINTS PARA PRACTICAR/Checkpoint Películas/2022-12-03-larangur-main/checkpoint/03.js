@@ -65,35 +65,29 @@ peliculas = ["Avengers: La era de Ultrón",];
 */
 
 function pelisEstrenos(listaDePeliculas) {
-  function (peliculas) {
-    for (let i = 0; i < listaDePeliculas.length; i++) {
-      for (let j = 0; j < peliculas.length; j++) {
-        if(listaDePeliculas[i])
-        return peliculas
-      } 
+  return function (peliculas) {
+    let estreno = false;
+    if (peliculas.length > 0) {
+      for (let i = 0; i < peliculas.length; i++) {
+        for (let j = 0; j < listaDePeliculas.length; j++) {
+          if (listaDePeliculas[j]["nombre"] === peliculas[i]) {
+            listaDePeliculas[j]["estreno"] = true;
+            estreno = true;
+          }
+        }
+      }
+      if (estreno) return listaDePeliculas;
+      if (!estreno)
+        return "No se encontro ninguna de esas peliculas en nuestro catalogo";
+    } else {
+      return "Por favor indicar las peliculas que son de estreno";
     }
-  }
+  };
 }
 
 // esto es una prueba para ver si el repositorio si se actualiza
 // sin tener que hacer el git add. ni tampoco git push
 // quiero ver si se realiza el cambio
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*function pelisEstrenos(listaDePeliculas) {
    function busqueda(array){

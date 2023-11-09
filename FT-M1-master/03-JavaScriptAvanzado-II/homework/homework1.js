@@ -58,9 +58,9 @@ con ese argumento; hecho eso, debe guardar el argumento junto con el resultado d
   squareCache(5)    // no volverá a invocar a square, simplemente buscará en la caché cuál es el resultado de square(5) y lo retornará (tip: si usaste un objeto, podés usar hasOwnProperty) */
 // CALLBACK es pasar una function por params
 
-//const cb = function (x) {
-//return x * 2;
-//};
+const cb = function (x) {
+  return x * 2;
+};
 //{2  :   4}
 //key : value
 function cacheFunction(cb) {
@@ -73,11 +73,11 @@ function cacheFunction(cb) {
     return memoria[arg];
   };
 }
-// const miMemoria = cacheFunction(cb);
+const miMemoria = cacheFunction(cb);
 
-// console.log(miMemoria(2));
-// console.log(miMemoria(8));
-// console.log(miMemoria(2));
+console.log(miMemoria(2));
+console.log(miMemoria(8));
+console.log(miMemoria(2));
 
 // function cacheFunction(cb) {
 //   // {key->arg : value->arg*2}
