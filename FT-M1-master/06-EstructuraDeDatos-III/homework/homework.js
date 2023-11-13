@@ -20,10 +20,11 @@ function BinarySearchTree(value) {
 }
 //todo: BST -> árbol binario de búsqueda    mayor o menor
 BinarySearchTree.prototype.insert = function (value) {
+  let subTree = new BinarySearchTree(value);
   if (value > this.value) {
     if (!this.right) {
       // ({}) -> true    (null) -> false  <- !null <- true  ==>  this.right === null
-      this.right = new BinarySearchTree(value);
+      this.right = subTree;
     } else {
       this.right.insert(value);
     }
@@ -31,7 +32,7 @@ BinarySearchTree.prototype.insert = function (value) {
     // por defecto queda aquí <=
     if (!this.left) {
       // ({}) -> true    (null) -> false  <- !null <- true  ==>  this.left === null
-      this.left = new BinarySearchTree(value);
+      this.left = subTree;
     } else {
       this.left.insert(value);
     }
@@ -78,7 +79,6 @@ BinarySearchTree.prototype.depthFirstForEachSimple = function (result = []) {
 //  cb(8)  =>  function(8){ testArr.push(8); } <= testArr = [8]
 BinarySearchTree.prototype.depthFirstForEach = function (cb, order) {
   if (order === "pre-order") {
-    XQ;
     cb(this.value);
     if (this.left) this.left.depthFirstForEach(cb, order);
     if (this.right) this.right.depthFirstForEach(cb, order);

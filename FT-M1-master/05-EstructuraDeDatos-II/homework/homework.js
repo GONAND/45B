@@ -55,13 +55,14 @@ LinkedList.prototype.remove = function () {
       // ({}) <- true   (null) <- false
       current = current.next;
     } // aquí va a avanzar hasta no el último next, sino uno anterior
-    console.log("--current--> ", current);
+    // console.log("--current--> ", current);
     const valueCopy = current.next.value;
     current.next = null;
     this._length--;
     return valueCopy;
   }
 };
+
 // function(nodeValue) {return nodeValue === 'two'})) --> true OR false
 LinkedList.prototype.search = function (valueOrCb) {
   if (!this.head) return null;
@@ -138,7 +139,6 @@ HashTable.prototype.set = function (key, value) {
     this.buckets[numBox] = {};
   }
   this.buckets[numBox][key] = value;
-  return this.buckets;
 };
 HashTable.prototype.get = function (key) {
   let numBox = this.hash(key);

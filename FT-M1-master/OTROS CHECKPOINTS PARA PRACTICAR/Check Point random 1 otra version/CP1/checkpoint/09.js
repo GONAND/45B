@@ -1,7 +1,7 @@
 const { BinarySearchTree } = require("../DS");
 // ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️
 //
-// 9️⃣ ***** EJERCICIO 9 ***** - BinarySearchTree.getHouseValues() 9️⃣ 
+// 9️⃣ ***** EJERCICIO 9 ***** - BinarySearchTree.getHouseValues() 9️⃣
 // Agregar al prototype de BinarySearchTree la función getHouseValues(), que servirá para obtener el valor total de una casa
 // dependiendo del parámetro que recibas.
 // Si recibes el parámetro "left", debes retornar la suma de todos los valores que estén a la izquierda del árbol.
@@ -26,18 +26,19 @@ const { BinarySearchTree } = require("../DS");
 BinarySearchTree.prototype.getHouseValues = function (side, total = 0) {
   // Tu código aquí:
 
-  if(side === "left"){
-    if(this.left){
-      return total += this.left.value + this.left.getHouseValues("left", 0);
+  if (side === "left") {
+    if (this.left) {
+      return (total += this.left.value + this.left.getHouseValues("left", 0));
     } else return total;
-  }else{
-    if(this.right){
-      return total += this.right.value + this.right.getHouseValues("right", 0);
+  } else {
+    if (this.right) {
+      return (total +=
+        this.right.value + this.right.getHouseValues("right", 0));
     } else return total;
   }
-}
+};
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
-  BinarySearchTree
+  BinarySearchTree,
 };
