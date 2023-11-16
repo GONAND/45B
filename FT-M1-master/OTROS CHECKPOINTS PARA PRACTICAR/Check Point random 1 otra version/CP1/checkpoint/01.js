@@ -2,7 +2,7 @@ const { Queue, Stack } = require("../DS");
 // ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️
 
 // 1️⃣ ***** EJERCICIO 1 ***** - henryParty() 1️⃣
-// Tenemos complicaciones! 
+// Tenemos complicaciones!
 // Se esta organizando una fiesta para inagurar las nuevas casas pero hay gente desconocida que intenta ingresar
 // La función recibirá por parámetro un array que representa en orden la fila de personas que intentan ingresar
 // necesitamos que solo ingresen los que tienen los ticket:"VIP" y que sean conocidos!
@@ -12,7 +12,7 @@ const { Queue, Stack } = require("../DS");
 //
 // [{name:"Carol", ticket:"FALSO", estado: "Desconocido"},
 // {name:"Gonzalo", ticket:"VIP",estado: "Conocido"},
-// {Name: "Micaias", ticket:"VIP", estado: "Desconocido"}], donde ticket y estado, representan el ingreso 
+// {Name: "Micaias", ticket:"VIP", estado: "Desconocido"}], donde ticket y estado, representan el ingreso
 // de un persona al nuevo QUEUE.
 // Finalmente, la función debe retornar la QUEUE que representa los invitados validos para ingresar
 //
@@ -31,19 +31,28 @@ const { Queue, Stack } = require("../DS");
 
 function henryParty(arr) {
   // Tu código aquí:
-  let puedeIngresar = new Queue();
-  
-  if ( 0 === puedeIngresar.size) return false;
-
-  for (let i=0 ;i<arr.length;++i){
-      if (arr[i].ticket === "VIP" && arr[i].estado === "Conocido"){
-        puedeIngresar.enqueue({...arr[i]});
-      }
+  let ingresar = new Queue();
+  if (0 === puedeIngresar.size) return false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][ticket] === "VIP" && arr[i][estado] === "Conocido") {
+      ingresar.enqueue({ ...arr[i] });
+    }
   }
-  return puedeIngresar;
+  return ingresar;
 }
+
+// let puedeIngresar = new Queue();
+
+// if ( 0 === puedeIngresar.size) return false;
+
+// for (let i=0 ;i<arr.length;++i){
+//     if (arr[i].ticket === "VIP" && arr[i].estado === "Conocido"){
+//       puedeIngresar.enqueue({...arr[i]});
+//     }
+// }
+// return puedeIngresar;
 
 // ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️
 module.exports = {
-  henryParty
+  henryParty,
 };
