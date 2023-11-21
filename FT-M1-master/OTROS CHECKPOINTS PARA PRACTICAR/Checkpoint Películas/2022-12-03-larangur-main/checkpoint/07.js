@@ -1,4 +1,4 @@
-const { LinkedList } = require('../DS');
+const { LinkedList } = require("../DS");
 /* ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️
 
 7️⃣ ***** EJERCICIO 7 - LinkedList ***** - encontrarPeliculas() 7️⃣
@@ -21,18 +21,33 @@ OUTPUT --> Head ➡ (3) ➡ (3)
 */
 
 LinkedList.prototype.encontrarPeliculas = function (numeroDeEstantería) {
-  let miLista = new LinkedList(),
-  current = this.head;
-
+  const nEst = new LinkedList();
+  let current = this.head;
   while (current) {
-   if (numeroDeEstantería === current.value){
-      miLista.add(current.value);
-   }
-   current = current.next;
+    if (current.value === numeroDeEstantería) {
+      nEst.add(current.value);
+    }
+    current = current.next;
   }
-  if (miLista.head) return miLista;
-  else return false;
+  if (nEst.head) {
+    return nEst;
+  } else {
+    return false;
+  }
 };
+
+//   let miLista = new LinkedList(),
+//   current = this.head;
+
+//   while (current) {
+//    if (numeroDeEstantería === current.value){
+//       miLista.add(current.value);
+//    }
+//    current = current.next;
+//   }
+//   if (miLista.head) return miLista;
+//   else return false;
+// };
 
 /*⚠️ NO MODIFICAR NADA DEBAJO DE ESTA LINEA ⚠️*/
 module.exports = LinkedList;

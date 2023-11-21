@@ -45,17 +45,29 @@ OUTPUT --->
 1) Podes definir un default-parameter para ayudarte.
 */
 function peliTaquillera(peliculas, aux = [], i = 0) {
-  if (Object.entries(peliculas).length > 0 && Object.entries(peliculas).length > i){
-    if (peliculas[i]['taquillera'] === true){
+  if (peliculas.length === 0) return aux;
+  if (i < peliculas.length) {
+    if (peliculas[i]["taquillera"]) {
       aux.push(peliculas[i]);
+      return peliTaquillera(peliculas, aux, i + 1);
+    } else {
+      return peliTaquillera(peliculas, aux, i + 1);
     }
-  peliTaquillera(peliculas, aux, i+1);
+  }
   return aux;
-   }
-   else {
-    return [];
-   }
 }
+
+//   if (Object.entries(peliculas).length > 0 && Object.entries(peliculas).length > i){
+//     if (peliculas[i]['taquillera'] === true){
+//       aux.push(peliculas[i]);
+//     }
+//   peliTaquillera(peliculas, aux, i+1);
+//   return aux;
+//    }
+//    else {
+//     return [];
+//    }
+// }
 
 /*⚠️ NO MODIFICAR NADA DEBAJO DE ESTA LINEA ⚠️*/
 module.exports = peliTaquillera;

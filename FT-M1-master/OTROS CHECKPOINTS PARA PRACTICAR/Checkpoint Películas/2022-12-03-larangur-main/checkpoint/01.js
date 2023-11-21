@@ -1,4 +1,4 @@
-const { Queue } = require('../DS');
+const { Queue } = require("../DS");
 /* ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️
 
 1️⃣ ***** EJERCICIO 1 - QUEUE ***** - guardarPeliculas() 1️⃣
@@ -26,20 +26,33 @@ OUTPUT ---> { "estrenar": 'Morbius', 1: 'La invitación', 2: 'Halloween: el fina
 */
 
 function guardarPeliculas(pelisQueue) {
-   let obj = {};
-   let pelis1 = new Queue;
-   pelis1 = pelisQueue;
-   longitud = pelis1.size();
-   
-   for (let i = 0; i < longitud; i++){
-      if (i === 0){
-         obj['estrenar']=pelis1.dequeue();
-      } else{
-         obj[i]=pelis1.dequeue();
-      }
-   }
-   return obj;
+  let cine = {};
+  let peliculas = new Queue();
+  peliculas = pelisQueue;
+  longitud = peliculas.size();
+  for (let i = 0; i < longitud; i++) {
+    if (i === 0) {
+      cine["estrenar"] = peliculas.dequeue();
+    } else {
+      cine[i] = peliculas.dequeue();
+    }
+  }
+  return cine;
 }
+
+// let obj = {};
+// let pelis1 = new Queue;
+// pelis1 = pelisQueue;
+// longitud = pelis1.size();
+
+// for (let i = 0; i < longitud; i++){
+//    if (i === 0){
+//       obj['estrenar']=pelis1.dequeue();
+//    } else{
+//       obj[i]=pelis1.dequeue();
+//    }
+// }
+// return obj;
 
 /*⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️*/
 module.exports = guardarPeliculas;

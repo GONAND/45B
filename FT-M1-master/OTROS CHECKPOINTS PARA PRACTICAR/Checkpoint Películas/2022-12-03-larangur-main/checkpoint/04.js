@@ -31,16 +31,27 @@ Puedes definir un default-parameter para ayudarte.
 */
 
 function seleccionarPelicula(peliculas, nombrePelicula, i = 0) {
-   if (Object.entries(peliculas).length === 0){
-      return 'por favor indicar las peliculas a buscar';
-   } else if (peliculas[i] === nombrePelicula){
-      return 'se encontro la pelicula: '+ nombrePelicula;
-   } else if (i < Object.entries(peliculas).length) {
+  if (Object.entries(peliculas).length === 0)
+    return "por favor indicar las peliculas a buscar";
+  if (i < Object.entries(peliculas).length) {
+    if (peliculas[i] === nombrePelicula) {
+      return `se encontro la pelicula: ${nombrePelicula}`;
+    } else {
       return seleccionarPelicula(peliculas, nombrePelicula, i + 1);
-   } else {
-      return 'no tenemos la pelicula: '+ nombrePelicula;
-   }
+    }
+  } else {
+    return `no tenemos la pelicula: ${nombrePelicula}`;
+  }
 }
 
+// if (Object.entries(peliculas).length === 0){
+//    return 'por favor indicar las peliculas a buscar';
+// } else if (peliculas[i] === nombrePelicula){
+//    return 'se encontro la pelicula: '+ nombrePelicula;
+// } else if (i < Object.entries(peliculas).length) {
+//    return seleccionarPelicula(peliculas, nombrePelicula, i + 1);
+// } else {
+//    return 'no tenemos la pelicula: '+ nombrePelicula;
+// }
 /*⚠️ NO MODIFICAR NADA DEBAJO DE ESTA LINEA ⚠️*/
 module.exports = seleccionarPelicula;

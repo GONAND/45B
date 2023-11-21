@@ -1,4 +1,4 @@
-const { Stack } = require('../DS');
+const { Stack } = require("../DS");
 /* ⚠️ NO MODIFICAR NADA POR ENCIMA DE ESTA LÍNEA ⚠️
 
  2️⃣ ***** EJERCICIO 2 - STACK ***** - acomodarPeliculas() 2️⃣
@@ -42,16 +42,27 @@ OUTPUT ---> Stack [
       }]
 */
 function acomodarPeliculas(listaDePeliculas, nombre) {
-   // Tu código aquí:
-  let miLista = new Stack();
-
-  for (i = 0; i < listaDePeliculas.length; i++){
-    if (listaDePeliculas[i]['nombre'] !== nombre && listaDePeliculas[i]['duracion'] >= 1){
-      miLista.push(listaDePeliculas[i])
+  // Tu código aquí:
+  const sJose = new Stack();
+  for (let i = 0; i < listaDePeliculas.length; i++) {
+    if (
+      listaDePeliculas[i].duracion >= 1 &&
+      listaDePeliculas[i].nombre !== nombre
+    ) {
+      sJose.push(listaDePeliculas[i]);
     }
   }
-return miLista;
+  return sJose;
 }
+
+//   let miLista = new Stack();
+
+//   for (i = 0; i < listaDePeliculas.length; i++){
+//     if (listaDePeliculas[i]['nombre'] !== nombre && listaDePeliculas[i]['duracion'] >= 1){
+//       miLista.push(listaDePeliculas[i])
+//     }
+//   }
+// return miLista;
 
 /* ⚠️ NO MODIFICAR NADA POR DEBAJO DE ESTA LÍNEA ⚠️*/
 module.exports = acomodarPeliculas;
