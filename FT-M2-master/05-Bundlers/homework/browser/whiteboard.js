@@ -1,5 +1,5 @@
-(function () {
-  window.whiteboard = new window.EventEmitter();
+  const EventEmitter = require("./event-emitter.js")
+  var whiteboard = new EventEmitter();
 
   // Ultimately, the color of our stroke;
   var color;
@@ -55,7 +55,7 @@
     // backing store is larger.
     ctx.scale(pixelRatio, pixelRatio);
 
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 15;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
   }
@@ -106,4 +106,5 @@
       whiteboard.emit("draw", start, end, strokeColor);
     }
   };
-})();
+
+module.exports = whiteboard

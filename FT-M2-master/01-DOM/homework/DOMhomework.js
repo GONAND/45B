@@ -123,8 +123,8 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
-var btton = document.getElementById("addButton");
-btton.addEventListener("click", addToDo);
+var button = document.getElementById("addButton");
+button.addEventListener("click", addToDo);
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
